@@ -487,9 +487,15 @@
 
 <script>
     function redirectToAnimation(event) {
-  event.stopPropagation(); // prevent envelope hover effects
-  event.preventDefault();  // skip any default button behavior
-  window.location.href = "animation.html"; // go immediately
+  event.stopPropagation();
+  event.preventDefault();
+
+  // Disable envelope hover effects instantly
+  const envelopeEl = document.querySelector('.envelope');
+  envelopeEl.style.pointerEvents = 'none';
+
+  // Go to animation page immediately
+  window.location.href = "animation.html";
 }
   </script>
 
